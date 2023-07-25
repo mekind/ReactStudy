@@ -1,5 +1,4 @@
 import Header from "../components/Header"
-import '../css/typography.css'
 import '../css/Home.css'
 
 const Home = () => {

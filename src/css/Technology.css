@@ -1,0 +1,72 @@
+.tech-container{
+  display: flex;
+}
+
+
+.ctitle {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.tech-left {
+  margin-left: 10%;
+  width: 50%;
+  margin-top: 2%;
+}
+
+.tech-intro {
+  margin-left: 8%;
+}
+
+
+.tech-tech {
+  font-size: 32px;
+  font-family: 'Bellefair Regular';
+  color: #D0D6F9;
+  margin-bottom: 2%;
+}
+
+.tech-title {
+  font-family: 'Bellefair Regular';
+  font-size: 56px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.tech-body {
+  font-size: 18px;
+  font-family: "Barlow Condensed";
+  color: #D0D6F9;
+  width: 70%;
+}
+
+.tech-right {
+  width: 50%;
+  margin-top: 10%;
+}
+
+.tech-img {
+  height: 80%;
+  background-size: cover;
+}
+
+.tech-box{
+  display: flex;
+  margin-top: 10%;
+}
+
+.big-dots {
+
+}
+
+.big-dot{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  text-align: center;
+  color: black;
+}

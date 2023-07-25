@@ -1,7 +1,7 @@
 @import './fonts.css';
 
 .title {
-  color: white;
+  color: #D0D6F9;
   font-size: 28px;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -10,7 +10,7 @@
 .body{
   padding-top: 0;
   margin-top: 0;
-  color: white;
+  color: #D0D6F9;
   font-size: 18px;
 }
 

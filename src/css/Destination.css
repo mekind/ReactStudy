@@ -43,7 +43,7 @@
 
 .planet-text {
   font-size: 18px;
-  font-family: 'Bellefair Regular';
+  font-family: "Barlow Condensed";
   color: #D0D6F9;
 }
 
@@ -67,6 +67,7 @@
 .info-body{
   color: #FFFFFF;
   font-size: 28px;
+  font-family: 'Bellefair Regular';
 }
 
 .destination-line {

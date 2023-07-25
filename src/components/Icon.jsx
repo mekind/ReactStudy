@@ -1,9 +1,7 @@
-import '../css/icon.css'
+import '/src/css/icon.css'
 
 const imageUrls = {
-  logo : 'assets/shared/logo.svg',
-  moon : 'assets/destination/image-moon.png',
-  mars : 'assets/destination/image-mars.png'
+  logo : '/public/assets/shared/logo.svg',
 }
 
 

@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import Title from "../components/Title";
-import '../css/Destination.css';
+import Title from "/src/components/Title";
+import '/src/css/Destination.css';
 
 
-import moon from '../../public/assets/destination/image-moon.png';
-import mars from '../../public/assets/destination/image-mars.png';
-import europa from '../../public/assets/destination/image-europa.png';
-import titan from '../../public/assets/destination/image-titan.png';
+import moon from '/public/assets/destination/image-moon.png';
+import mars from '/public/assets/destination/image-mars.png';
+import europa from '/public/assets/destination/image-europa.png';
+import titan from '/public/assets/destination/image-titan.png';
 import Menu from "../components/Menu";
 
 const planetInfo = {
