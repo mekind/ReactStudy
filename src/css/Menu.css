@@ -1,0 +1,18 @@
+.menu-container {
+  display: flex;
+  padding: 0;
+  margin-bottom: 5px;
+  width: ;
+}
+
+.menu-number {
+}
+
+.menu-name {
+  display: inline-block;
+  font-family: 'Barlow Condensed'; 
+  font-size: 16px;
+  color: #FFFFFF;;
+  text-decoration: none;
+}
+

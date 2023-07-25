@@ -33,27 +33,18 @@
   background: #979797;
 }
 
-.a1 {
+a {
   font-family: 'Barlow Condensed'; 
   font-size: 16px;
   color: #FFFFFF;
-  width: 10%;
-  text-align: center;
+  display:inline-block;
   text-decoration: none;
   padding-top: 2.3rem;
   padding-bottom: 2.3rem;
 }
 
-
-.a2 {
-  font-family: 'Barlow Condensed'; 
-  font-size: 16px;
-  color: #FFFFFF;
-  width: 20%;
-  text-align: center;
-  text-decoration: none;
-  padding-top: 2.3rem;
-  padding-bottom: 2.3rem;
+a:hover {
+  border-bottom: solid;
+  border-bottom-color: #979797;
 }
-
 

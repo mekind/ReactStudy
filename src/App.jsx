@@ -9,14 +9,15 @@ import Crew from './recoil/Crew'
 import Technology from './recoil/Technology'
 
 
-function App() {
+
+const App = ({name}) => {
+  console.log(name)
   return (
     <Routes>
       <Route path = '/' element={<Layout/>}>
         <Route index element={<Home/>}/>
-        <Route path="/destination" element={<Destination />}>
-          <Route path=':planet' element={<Planet/>}/>
-        </Route>
+        <Route path="/destination" element={<Destination />}/>
+        <Route path="/destination/:planet" element={<Destination />}/>
         <Route path="/crew" element={<Crew />}/>
         <Route path="/technology" element={<Technology />}/>
       </Route>

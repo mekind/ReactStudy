@@ -3,17 +3,9 @@ import '../css/header.css'
 import { NavLink } from "react-router-dom"
 
 const Header = () => {
-  const activeStyles1 = {
-    'border-bottom': 'solid',
-    'border-bottom-color': '#FFFFFF',
-    'width' : '10%'
-  }
-
-  const activeStyles2 = {
-    'border-bottom': 'solid',
-    'border-bottom-color': '#FFFFFF',
-    'width' : '20%'
-
+  const activeStyles = {
+    'borderBottom': 'solid',
+    'borderBottomColor': '#FFFFFF',
   }
 
   return (
@@ -27,28 +19,28 @@ const Header = () => {
       <div className="menu">
           <NavLink 
             className='a1'
-            style={({isActive}) => (isActive ? activeStyles1 : undefined)}
+            style={({isActive}) => (isActive ? activeStyles : undefined)}
             to={'/'}
           >
-              00 HOME
+          00 HOME
           </NavLink>
           <NavLink 
             className='a2'
-            style={({isActive}) => (isActive ? activeStyles2 : undefined)}
+            style={({isActive}) => (isActive ? activeStyles : undefined)}
             to={'/destination'}
           >
             01 DESINTATION
           </NavLink>
           <NavLink
             className='a1'
-            style={({isActive}) => (isActive ? activeStyles1 : undefined)}
+            style={({isActive}) => (isActive ? activeStyles : undefined)}
             to={'/crew'}
           >
           02 CREW
           </NavLink>
           <NavLink
             className='a2'
-            style={({isActive}) => (isActive ? activeStyles2 : undefined)}
+            style={({isActive}) => (isActive ? activeStyles : undefined)}
             to={'/technology'}
           >
             03 TECHNOLOGY
