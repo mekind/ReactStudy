@@ -3,11 +3,15 @@ import Title from "/src/components/Title";
 import '/src/css/Destination.css';
 
 
-import moon from '/public/assets/destination/image-moon.png';
-import mars from '/public/assets/destination/image-mars.png';
-import europa from '/public/assets/destination/image-europa.png';
-import titan from '/public/assets/destination/image-titan.png';
-import Menu from "../components/Menu";
+import moon from '/assets/destination/image-moon.png';
+import mars from '/assets/destination/image-mars.png';
+import europa from '/assets/destination/image-europa.png';
+import titan from '/assets/destination/image-titan.png';
+import destination from '/assets/destination/background-destination-desktop.jpg';
+import { useRecoilState } from "recoil";
+import { BackgroundUrl } from "./Store";
+import { useEffect } from "react";
+import MenuItems from "../components/MenuItems";
 
 const planetInfo = {
   MOON : {
@@ -37,6 +41,11 @@ const planetInfo = {
 }
 
 const Destination = () => {
+  const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
+  useEffect(() => {
+    setBackgroundUrl(destination);
+  }, [])
+
   const {planet='MOON'} = useParams();
   const title = 'PICK YOUR DESTINATION';
   const planetList = ['MOON', 'MARS', 'EUROPA', 'TITAN']
@@ -53,9 +62,6 @@ const Destination = () => {
       </div>
       <div className="planet-right">
         <div className="planets" style={{width:'333px'}}>
-          {planetList.map(planet => 
-            <Menu className='planet-list' key={planet} name={planet} goUrl={`/destination/${planet}`}/>
-          )} 
         </div>  
         <div style={{width:'70%'}}>
           <p className="planet-name">{planet}</p>

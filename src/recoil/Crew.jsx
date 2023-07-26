@@ -1,10 +1,14 @@
 import { NavLink, useParams } from "react-router-dom";
 import Title from "../components/Title";
 import '../css/Crew.css'
-import douglas from '/public/assets/crew/image-douglas-hurley.png';
-import mark from '/public/assets/crew/image-mark-shuttleworth.png';
-import victor from '/public/assets/crew/image-victor-glover.png';
-import ano from '/public/assets/crew/image-anousheh-ansari.png';
+import douglas from '/assets/crew/image-douglas-hurley.png';
+import mark from '/assets/crew/image-mark-shuttleworth.png';
+import victor from '/assets/crew/image-victor-glover.png';
+import ano from '/assets/crew/image-anousheh-ansari.png';
+import crew from '/assets/crew/background-crew-desktop.jpg';
+import { useRecoilState } from "recoil";
+import { BackgroundUrl } from "./Store";
+import { useEffect } from "react";
 
 
 const crewData = [
@@ -39,8 +43,11 @@ const crewData = [
 ]
 
 const Crew = () => {
+  const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
+  useEffect(() => {
+    setBackgroundUrl(crew)
+  }, [])
   const {crewNumber=0} = useParams();
-  console.log(crewNumber)
   const title = 'MEET YOUR CREW';
 
 
@@ -58,12 +65,12 @@ const Crew = () => {
         <div className="dots">
           {crewData.map( data => {
             if(data.name == crewData[crewNumber].name)
-              return (<NavLink  key={data.name} to={data.url}>
+              return (<NavLink className='test'  key={data.name} to={data.url}>
                 <div className="dot" style={{backgroundColor: '#FFFFFF'}}/>
               </NavLink>
               );
               
-            return (<NavLink key={data.name} to={data.url}>
+            return (<NavLink className='test' key={data.name} to={data.url}>
               <div className="dot"/>
             </NavLink>
             );

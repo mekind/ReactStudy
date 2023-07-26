@@ -1,27 +1,63 @@
-import Header from "../components/Header"
-import '../css/Home.css'
+import { styled } from 'styled-components'
+import TextComponent from '../components/TextComponent'
+import CircleComponent from '../components/CircleComponent'
+import { useRecoilState } from 'recoil'
+import { BackgroundUrl } from './Store'
+import { useEffect } from 'react'
+import home from '/assets/home/background-home-desktop.jpg';
+
+export const Container = styled.div`
+  display: flex;
+  height: 81.1%;
+`;
+
+export const Left = styled.div`
+  width: 38.6%;
+  margin-left: 11.4%;
+  bottom:0;
+`;
+
+export const Right = styled.div`
+  width: 50%;
+  background: red;
+`;
+
+const LeftWrapper = styled.div`
+  display: flex;
+  margin-top:20%;
+  width: 450px;
+`;
+
+
+const RightWrapper = styled.div`
+  padding-top:40%;
+  padding-left: 31.2%;
+  width: 450px;
+`;
+
+const subTitle = 'SO, YOU WANT TO TRAVEL TO';
+const title = 'SPACE';
+const body = 'Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!';
 
 const Home = () => {
-  return (
-    <div >
-      <div className="content">
-        <div className="text">
-          <div className="left">
-            <p className="title">SO, YOU WANT TO TRAVEL TO</p>
-            <h1>SPACE</h1>
-            <p className="body">
-            Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
-            </p>
-          </div>
-        </div>
+  const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
+  useEffect(() => {
+    setBackgroundUrl(home)
+  }, [])
 
-        <div className="right">
-          <div className="circle">
-            <p className="explore">EXPLORE</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  return (
+    <Container >
+      <Left>
+        <LeftWrapper>
+          <TextComponent subTitle={subTitle} title={title} body={body}/>
+        </LeftWrapper>
+      </Left>
+      <Right>
+        <RightWrapper>
+          <CircleComponent/>
+        </RightWrapper>
+      </Right>
+    </Container>
   )
 }
 

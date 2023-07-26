@@ -2,11 +2,11 @@
   font-family: "Bellefair Regular";
   font-style: normal;
   color: #FFFFFF;
-  src: url('/public/assets/fonts/Bellefair-Regular.ttf');
+  src: url('/assets/fonts/Bellefair-Regular.ttf');
 }
 
 @font-face {
   font-family: "Barlow Condensed";
   color: #FFFFFF;
-  src: url('/public/assets/fonts/BarlowCondensed-Regular.ttf');
+  src: url('/assets/fonts/BarlowCondensed-Regular.ttf');
 }
