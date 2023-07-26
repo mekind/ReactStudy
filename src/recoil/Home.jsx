@@ -19,12 +19,11 @@ export const Left = styled.div`
 
 export const Right = styled.div`
   width: 50%;
-  background: red;
 `;
 
 const LeftWrapper = styled.div`
   display: flex;
-  margin-top:20%;
+  padding-top: 25%;
   width: 450px;
 `;
 
