@@ -51,8 +51,21 @@ const PlanetImg = styled.div`
 
 const Planets = styled.div`
   display: flex;
+
+  :hover {
+    border-bottom: solid 3px;
+    border-bottom-color: #979797;
+  }
 `
 
+const NavStyle = styled(NavLink)`
+  padding-top:1%;
+  padding-bottom: 1%;
+  text-decoration: none;
+  :hover {
+    border-bottom: 0;
+  }
+`
 
 const planetInfo = {
   MOON : {
@@ -90,6 +103,10 @@ const Destination = () => {
   const {planet='MOON'} = useParams();
   const title = 'PICK YOUR DESTINATION';
   const planetList = ['MOON', 'MARS', 'EUROPA', 'TITAN']
+  const activeStyles = {
+    'borderBottom': 'solid',
+    'borderBottomColor': '#FFFFFF',
+  }
 
   return (
     <Container>
@@ -105,9 +122,13 @@ const Destination = () => {
         <RightWrapper>
           <Planets>
             {planetList.map( now => (
-              <NavLink key={now} to={'/destination/'+now}>
+              <NavStyle 
+                key={now} 
+                to={'/destination/'+now}
+                style={({isActive}) => (isActive ? activeStyles : undefined)}
+              >
                 <MenuItems number={''} name={now}/>
-              </NavLink>
+              </NavStyle>
             ))}
           </Planets>
           <DestText 

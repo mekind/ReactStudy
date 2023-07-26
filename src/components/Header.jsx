@@ -29,11 +29,19 @@ const Menu = styled.div`
   align-items: center;
   padding-left: 5%;
   padding-right: 5%;
+  :hover {
+    border-bottom: solid 3px;
+    border-bottom-color: #979797;
+  }
 `
 
 const NavStyle = styled(NavLink)`
   padding-top: 4.3%;
   padding-bottom: 4.2%;
+  text-decoration: none;
+  :hover {
+    border-bottom: 0;
+  }
 `
 
 const menuList = [
@@ -48,7 +56,6 @@ const Header = () => {
     'borderBottom': 'solid',
     'borderBottomColor': '#FFFFFF',
   }
-
   return (
     <Container>
       <Logo/>
@@ -57,8 +64,8 @@ const Header = () => {
         {menuList.map((menu) => 
           (<NavStyle 
             key={menu.name} 
+            style={({isActive}) => (isActive?  activeStyles: undefined)}
             to={menu.url}
-            style={({isActive}) => (isActive ? activeStyles : undefined)}
             >
             <MenuItems number={menu.number} name={menu.name}/>
           </NavStyle>

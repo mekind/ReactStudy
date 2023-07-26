@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import '../css/Menu.css'
 
 
 const Container = styled.div`
