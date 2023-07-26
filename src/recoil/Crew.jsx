@@ -1,5 +1,5 @@
 import { NavLink, useParams } from "react-router-dom";
-import Title from "../components/Title";
+import SubTitle from "../components/SubTitle";
 import '../css/Crew.css'
 import douglas from '/assets/crew/image-douglas-hurley.png';
 import mark from '/assets/crew/image-mark-shuttleworth.png';
@@ -55,7 +55,7 @@ const Crew = () => {
     <div className="crew-container">
       <div className="crew-left">
         <div className="ctitle">
-          <Title number='02' title={title}/>
+          <SubTitle number='02' title={title}/>
         </div>
         <div className="crew-intro">
           <p className="crew-career">{crewData[crewNumber].career.toUpperCase()}</p>

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import Bellefair from '/assets/fonts/bellefair-regular.otf';
 import Barlow from '/assets/fonts/BarlowCondensed-Regular.ttf';
+import BarlowBold from '/assets/fonts/BarlowCondensed-Bold.ttf';
 
 
 
@@ -12,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Barlow";
     src: url(${Barlow}) format("truetype");
+  }
+  @font-face {
+    font-family: "BarlowBold";
+    src: url(${BarlowBold}) format("truetype");
   }
   
   html, body, div, span, applet, object, iframe,

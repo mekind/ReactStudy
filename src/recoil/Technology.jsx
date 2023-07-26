@@ -1,5 +1,5 @@
 import { NavLink, useParams } from "react-router-dom";
-import Title from "../components/Title"
+import SubTitle from "../components/SubTitle"
 import '/src/css/Technology.css';
 
 import vehicle from "/assets/technology/image-launch-vehicle-portrait.jpg";
@@ -42,7 +42,7 @@ const Technology = () => {
     <div className="tech-container">
       <div className="tech-left">
         <div className="ctitle">
-          <Title number='03' title={title}/>
+          <SubTitle number='03' title={title}/>
         </div>
         <div className="tech-box">
           <div className="big-dots">

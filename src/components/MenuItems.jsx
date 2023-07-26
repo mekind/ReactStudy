@@ -7,16 +7,15 @@ const Container = styled.div`
 `
 
 const Number = styled.p`
-  font-family: 'Barlow';
+  font-family: 'BarlowBold';
   font-size: 16px;
-  font-weight: bold;
   color: #FFFFFF;
   letter-spacing: 2.7px;
   padding-right: 11px;
 `;
 
 const Name = styled(Number)`
-  font-weight: normal;
+  font-family: 'Barlow';
 `;
 
 const MenuItems = ({

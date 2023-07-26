@@ -1,6 +1,4 @@
-import { useParams } from "react-router-dom";
-import Title from "/src/components/Title";
-import '/src/css/Destination.css';
+import { NavLink, useParams } from "react-router-dom";
 
 
 import moon from '/assets/destination/image-moon.png';
@@ -8,10 +6,53 @@ import mars from '/assets/destination/image-mars.png';
 import europa from '/assets/destination/image-europa.png';
 import titan from '/assets/destination/image-titan.png';
 import destination from '/assets/destination/background-destination-desktop.jpg';
+
 import { useRecoilState } from "recoil";
 import { BackgroundUrl } from "./Store";
 import { useEffect } from "react";
+import { styled } from "styled-components";
+
 import MenuItems from "../components/MenuItems";
+import SubTitle from "/src/components/SubTitle";
+import DestText from "../components/DestText";
+
+const Container = styled.div`
+  display: flex;
+  height: 81.1%;
+`;
+
+const Left = styled.div`
+  width: 50%;
+  padding-left: 11.5%;
+  padding-top : 8.4%;
+`;
+
+const Right = styled.div`
+  width: 50%;
+  padding-top : 12%;
+  padding-left: 5%;
+`;
+
+const LeftWrapper = styled.div`
+  width: 445px;
+  height:445px;
+  padding-left: 4.4%;
+  padding-top: 10.7%;
+`;
+
+
+const RightWrapper = styled.div`
+  width: 445px;
+`;
+
+const PlanetImg = styled.div`
+  
+`
+
+const Planets = styled.div`
+  display: flex;
+`
+
 
 const planetInfo = {
   MOON : {
@@ -51,37 +92,33 @@ const Destination = () => {
   const planetList = ['MOON', 'MARS', 'EUROPA', 'TITAN']
 
   return (
-    <div className="planet-border">
-      <div className="planet-left">
-        <div className="ptitle">
-          <Title number='01' title={title}/>
-        </div>
-        <div className="planet">
-          <img src={planetInfo[planet].imgUrl}/>
-        </div>
-      </div>
-      <div className="planet-right">
-        <div className="planets" style={{width:'333px'}}>
-        </div>  
-        <div style={{width:'70%'}}>
-          <p className="planet-name">{planet}</p>
-          <p className='planet-text'>{planetInfo[planet].text}</p>
-        </div>      
-        <div className="destination-line"/>
-        <div className="planet-info">
-          <div className="planet-distance">
-            <p className="info-title">AVG. DISTANCE</p>  
-            <p>{planetInfo[planet].distance}</p>
-          </div>
-          <div className="planet-time">
-            <p className="info-title">EST. TRAVEL TIME</p>  
-            <p>{planetInfo[planet].days}</p>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    
+    <Container>
+      <Left>
+        <SubTitle number='01' title={title}/>
+        <LeftWrapper>
+          <PlanetImg>
+            <img src={planetInfo[planet].imgUrl}/>
+          </PlanetImg>
+        </LeftWrapper>
+      </Left>
+      <Right>
+        <RightWrapper>
+          <Planets>
+            {planetList.map( now => (
+              <NavLink key={now} to={'/destination/'+now}>
+                <MenuItems number={''} name={now}/>
+              </NavLink>
+            ))}
+          </Planets>
+          <DestText 
+            title={planet} 
+            body={planetInfo[planet].text}
+            distance={planetInfo[planet].distance}
+            days={planetInfo[planet].days}
+          /> 
+        </RightWrapper>
+      </Right>
+    </Container>    
   )
 }
 

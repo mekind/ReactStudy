@@ -6,18 +6,17 @@ import { BackgroundUrl } from './Store'
 import { useEffect } from 'react'
 import home from '/assets/home/background-home-desktop.jpg';
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   height: 81.1%;
 `;
 
-export const Left = styled.div`
+const Left = styled.div`
   width: 38.6%;
   margin-left: 11.4%;
-  bottom:0;
 `;
 
-export const Right = styled.div`
+const Right = styled.div`
   width: 50%;
 `;
 
