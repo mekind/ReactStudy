@@ -66,19 +66,35 @@ const Circles = styled.div`
 const Circle = styled.div`
   height:80px;
   width: 80px;
-  background: #FFFFFF;
   border-radius: 50%;
   margin-bottom: 32px;  
+
+  color: ${(props) =>{ console.log(props.active); return (props.active === 'true' ? 'black': 'white')}};
+  font-family: 'Bellefair';
+  font-size:32px;
+  letter-spacing:2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #979797;
+  background: ${(props) =>(props.active === 'true' ? 'white': undefined)};
 `;
+
+const NavStyle = styled(NavLink)`
+  text-decoration: none;
+  :hover {
+    border: 0;
+  }
+`
 
 const TechImg = styled.div`
   height: 80%;
-  width: 80%;
   background: url(${(props) => (props.turl)});
-  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
 `
-
-
 
 
 const Technology = () => {
@@ -90,6 +106,7 @@ const Technology = () => {
   const title = 'SPACE LAUNCH 101';
   const sub = 'THE TERMINOLOGY…';
   const levels = [0,1,2];
+  console.log(level);
   return (
     <Container>
       <Left>
@@ -97,7 +114,9 @@ const Technology = () => {
         <LeftWrapper>
           <Circles>
             {levels.map(lev => (
-              <Circle key={lev} />
+              <NavStyle key={lev} to={'/technology/'+lev}>
+                <Circle active={(level == lev).toString()}>{lev+1}</Circle>
+              </NavStyle>
             ))}
           </Circles>
           <TechText sub={sub} name={datas[level].title} text={datas[level].body}/>
