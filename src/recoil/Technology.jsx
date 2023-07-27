@@ -69,7 +69,7 @@ const Circle = styled.div`
   border-radius: 50%;
   margin-bottom: 32px;  
 
-  color: ${(props) =>{ console.log(props.active); return (props.active === 'true' ? 'black': 'white')}};
+  color: ${(props) => (props.active === 'true' ? 'black': 'white')};
   font-family: 'Bellefair';
   font-size:32px;
   letter-spacing:2px;
@@ -106,7 +106,7 @@ const Technology = () => {
   const title = 'SPACE LAUNCH 101';
   const sub = 'THE TERMINOLOGY…';
   const levels = [0,1,2];
-  console.log(level);
+
   return (
     <Container>
       <Left>
