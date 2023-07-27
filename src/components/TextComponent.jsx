@@ -9,12 +9,17 @@ export const BodyText = styled.p`
   line-height: 32px;
 `
 
+const Title = styled.h1`
+  padding-top: 10%;
+  padding-bottom: 10%;
+`
+
 
 const TextComponent = ({subTitle, title, body}) => {
   return (
     <div>
       <h5 style={{ marginTop:'24px'}}>{subTitle}</h5>
-      <h1>{title}</h1>
+      <Title>{title}</Title>
       <BodyText>{body}</BodyText>
     </div>
   )

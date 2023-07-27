@@ -12,8 +12,8 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  width: 38.6%;
-  margin-left: 11.4%;
+  width: 50%;
+  padding-left: 11.4%;
 `;
 
 const Right = styled.div`
@@ -22,7 +22,7 @@ const Right = styled.div`
 
 const LeftWrapper = styled.div`
   display: flex;
-  padding-top: 25%;
+  padding-top: 35%;
   width: 450px;
 `;
 
