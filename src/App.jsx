@@ -19,8 +19,8 @@ const App = () => {
           <Route path="/crew/:crewNumber" element={<Crew />}/>
           <Route path="/technology" element={<Technology />}/>
           <Route path="/technology/:level" element={<Technology />}/>
+          <Route path="*" element={<NotFound />}/>
         </Route>
-        <Route path="*" element={<NotFound />}/>
       </Routes>
     </RecoilRoot>
   )

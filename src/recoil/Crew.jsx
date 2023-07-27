@@ -1,6 +1,5 @@
 import { NavLink, useParams } from "react-router-dom";
 import SubTitle from "../components/SubTitle";
-import '../css/Crew.css'
 import douglas from '/assets/crew/image-douglas-hurley.png';
 import mark from '/assets/crew/image-mark-shuttleworth.png';
 import victor from '/assets/crew/image-victor-glover.png';
@@ -9,6 +8,8 @@ import crew from '/assets/crew/background-crew-desktop.jpg';
 import { useRecoilState } from "recoil";
 import { BackgroundUrl } from "./Store";
 import { useEffect } from "react";
+import { styled } from "styled-components";
+import { CrewText } from "../components/CrewText";
 
 
 const crewData = [
@@ -42,6 +43,54 @@ const crewData = [
   }
 ]
 
+const Container = styled.div`
+  display: flex;
+  height: 81.1%;
+`;
+
+const Left = styled.div`
+  width: 50%;
+  padding-left: 11.5%;
+  padding-top : 7%;
+`;
+
+const Right = styled.div`
+  width: 50%;
+  height: 100%;
+  padding-top : 12%;
+  padding-left: 5%;
+`;
+
+const LeftWrapper = styled.div`
+  width: 445px;
+  height:445px;
+  padding-top: 24%;
+`;
+
+
+const RightWrapper = styled.div`
+  width: 445px;
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+`;
+
+const Dots = styled.div`
+  display: flex;  
+  position: fixed;
+  bottom: 10%;
+`
+
+const Dot = styled.div`
+  background: ${(props) => (props.color)};
+  opacity: 17.44;
+  margin-top: 10%;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+`
+
 const Crew = () => {
   const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
   useEffect(() => {
@@ -49,39 +98,35 @@ const Crew = () => {
   }, [])
   const {crewNumber=0} = useParams();
   const title = 'MEET YOUR CREW';
-
+  const color = 'rgba(151, 151,151, 0.17)';
 
   return (
-    <div className="crew-container">
-      <div className="crew-left">
-        <div className="ctitle">
-          <SubTitle number='02' title={title}/>
-        </div>
-        <div className="crew-intro">
-          <p className="crew-career">{crewData[crewNumber].career.toUpperCase()}</p>
-          <p className="crew-name">{crewData[crewNumber].name.toUpperCase()}</p>
-          <p className="crew-text">{crewData[crewNumber].text}</p>
-        </div>
-        <div className="dots">
-          {crewData.map( data => {
-            if(data.name == crewData[crewNumber].name)
-              return (<NavLink className='test'  key={data.name} to={data.url}>
-                <div className="dot" style={{backgroundColor: '#FFFFFF'}}/>
-              </NavLink>
-              );
-              
-            return (<NavLink className='test' key={data.name} to={data.url}>
-              <div className="dot"/>
+    <Container>
+      <Left>
+        <SubTitle number='02' title={title}/>
+        <LeftWrapper>
+          <CrewText 
+            sub={crewData[crewNumber].career} 
+            name={crewData[crewNumber].name} 
+            text = {crewData[crewNumber].text}/>
+        </LeftWrapper>
+        <Dots>
+          {crewData.map( crew =>(
+            <NavLink
+              key={crew.name}
+              to={crew.url}
+            >
+              <Dot color={crew.name === crewData[crewNumber].name ? '#FFFFFF' :color}/>
             </NavLink>
-            );
-          })}
-        </div>
-      </div>
-      <div className="crew-right">
-        <img src={crewData[crewNumber].imgUrl} style={{overflow:'hidden'}}/>
-      </div>
-    </div>
-    
+          ))}
+        </Dots>
+      </Left>
+      <Right>
+        <RightWrapper>
+          <img src={crewData[crewNumber].imgUrl}/>
+        </RightWrapper>
+      </Right>
+    </Container>   
   )
 }
 

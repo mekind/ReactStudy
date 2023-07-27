@@ -51,7 +51,8 @@ const PlanetImg = styled.div`
 
 const Planets = styled.div`
   display: flex;
-
+  width: 285px;
+  justify-content: space-around;
   :hover {
     border-bottom: solid 3px;
     border-bottom-color: #979797;
@@ -63,7 +64,7 @@ const NavStyle = styled(NavLink)`
   padding-bottom: 1%;
   text-decoration: none;
   :hover {
-    border-bottom: 0;
+    border: 0;
   }
 `
 
@@ -125,7 +126,7 @@ const Destination = () => {
               <NavStyle 
                 key={now} 
                 to={'/destination/'+now}
-                style={({isActive}) => (isActive ? activeStyles : undefined)}
+                style={({isActive}) => (isActive || now == planet ? activeStyles : undefined)}
               >
                 <MenuItems number={''} name={now}/>
               </NavStyle>

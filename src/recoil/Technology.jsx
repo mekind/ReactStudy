@@ -1,7 +1,5 @@
 import { NavLink, useParams } from "react-router-dom";
 import SubTitle from "../components/SubTitle"
-import '/src/css/Technology.css';
-
 import vehicle from "/assets/technology/image-launch-vehicle-portrait.jpg";
 import spaceport from "/assets/technology/image-spaceport-portrait.jpg";
 import spacecapsule from "/assets/technology/image-space-capsule-portrait.jpg";
@@ -9,6 +7,8 @@ import technology from '/assets/technology/background-technology-desktop.jpg';
 import { useRecoilState } from "recoil";
 import { BackgroundUrl } from "./Store";
 import { useEffect } from "react";
+import { styled } from "styled-components";
+import TechText from "../components/TechText";
 
 const datas = [
   {
@@ -28,6 +28,57 @@ const datas = [
   }
 ]
 
+const Container = styled.div`
+  display: flex;
+  height: 81.1%;
+`;
+
+const Left = styled.div`
+  width: 50%;
+  padding-left: 11.5%;
+  padding-top : 7%;
+`;
+
+const Right = styled.div`
+  width: 50%;
+  height: 100%;
+  padding-top : 12%;
+  padding-left: 5%;
+`;
+
+const LeftWrapper = styled.div`
+  display: flex;
+  padding-top: 24%;
+`;
+
+
+const RightWrapper = styled.div`
+  width: 445px;
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+`;
+
+const Circles = styled.div`
+  padding-right: 80px;
+`;
+
+const Circle = styled.div`
+  height:80px;
+  width: 80px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  margin-bottom: 32px;  
+`;
+
+const TechImg = styled.div`
+  height: 80%;
+  width: 80%;
+  background: url(${(props) => (props.turl)});
+  background-size: cover;
+`
+
+
 
 
 const Technology = () => {
@@ -35,42 +86,29 @@ const Technology = () => {
   useEffect(() => {
     setBackgroundUrl(technology);
   }, [])
-  const {level=1} = useParams();
+  const {level=0} = useParams();
   const title = 'SPACE LAUNCH 101';
-  const levels = [1,2,3];
+  const sub = 'THE TERMINOLOGY…';
+  const levels = [0,1,2];
   return (
-    <div className="tech-container">
-      <div className="tech-left">
-        <div className="ctitle">
-          <SubTitle number='03' title={title}/>
-        </div>
-        <div className="tech-box">
-          <div className="big-dots">
-            { levels.map(lev => {
-              const toUrl = '/technology/'+ lev
-              if(lev == level)
-                return (<NavLink  key={lev} className='test' to={toUrl}>
-                  <div style={{background:'white', color:'black'}} className="big-dot"><p>{lev}</p></div>
-                </NavLink>)
-              return (<NavLink  key={lev} className='test' to={toUrl}>
-                <div className="big-dot"><p>{lev}</p></div>
-              </NavLink>)
-            })
-            }
-          </div>
-          <div className="tech-intro">
-            <p className="tech-tech">THE TERMINOLOGY…</p>
-            <p className="tech-title">{datas[level-1].title.toUpperCase()}</p>
-            <p className="tech-body">{datas[level-1].body}</p>
-          </div>
-        </div>
-        
-      </div>
-      <div className="tech-right">
-        <img className="tech-img" src={datas[level-1].url} />
-      </div>
-    </div>
-    
+    <Container>
+      <Left>
+        <SubTitle number='03' title={title}/>
+        <LeftWrapper>
+          <Circles>
+            {levels.map(lev => (
+              <Circle key={lev} />
+            ))}
+          </Circles>
+          <TechText sub={sub} name={datas[level].title} text={datas[level].body}/>
+        </LeftWrapper>
+      </Left>
+      <Right>
+        <RightWrapper>
+          <TechImg turl={datas[level].url}/>
+        </RightWrapper>
+      </Right>
+    </Container>     
   )
 }
 

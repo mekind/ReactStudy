@@ -37,6 +37,7 @@ const InfoBody = styled.div`
 
 const Name = styled.h2`
   padding-top: 8%;
+  padding-bottom: 8%;
 `
 
 const DestText = ({title, body, distance, days}) => {

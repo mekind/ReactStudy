@@ -15,6 +15,7 @@ const Number = styled.p`
 
 const Name = styled(Number)`
   font-family: 'Barlow';
+  padding-right: 0;
 `;
 
 const MenuItems = ({
@@ -23,7 +24,7 @@ const MenuItems = ({
 }) => {
   return (
     <Container>
-      <Number>{number}</Number>
+      {number && <Number>{number}</Number>}
       <Name>{name}</Name>
     </Container>
   )
