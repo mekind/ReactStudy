@@ -5,18 +5,24 @@ const Container = styled.div`
   display: flex;
 `
 
-const Number = styled.p`
-  font-family: 'BarlowBold';
+const Name = styled.p`
+  font-family: 'Barlow';
   font-size: 16px;
   color: #FFFFFF;
   letter-spacing: 2.7px;
   padding-right: 11px;
+
 `;
 
-const Name = styled(Number)`
-  font-family: 'Barlow';
-  padding-right: 0;
+const Number = styled(Name)`
+  font-family: 'BarlowBold';
+  padding-right: 11px;
+  @media (max-width: 768px) {
+    font-size: 0px;
+  }
 `;
+
+
 
 const MenuItems = ({
   number = '00', 

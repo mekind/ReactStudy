@@ -9,6 +9,7 @@ const Circle = styled.div`
   border-radius: 50%;
   height: 274px;
   width: 274px;
+  margin:0 auto;
   transition: outline 0.2s linear;
   outline: 0px solid rgba(255, 255, 255, 0.1);
   &:hover {

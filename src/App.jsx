@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
-import Layout from './recoil/Layout'
-import Home from './recoil/Home'
-import Destination from './recoil/Destination'
-import Crew from './recoil/Crew'
-import Technology from './recoil/Technology'
+import Layout from './pages/Layout'
+import Home from './pages/Home'
+import Destination from './pages/Destination'
+import Crew from './pages/Crew'
+import Technology from './pages/Technology'
 import { RecoilRoot } from 'recoil'
-import NotFound from './recoil/NotFound'
+import NotFound from './pages/NotFound'
 
 const App = () => {
   return (

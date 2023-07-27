@@ -4,7 +4,7 @@ import douglas from '/assets/crew/image-douglas-hurley.png';
 import mark from '/assets/crew/image-mark-shuttleworth.png';
 import victor from '/assets/crew/image-victor-glover.png';
 import ano from '/assets/crew/image-anousheh-ansari.png';
-import crew from '/assets/crew/background-crew-desktop.jpg';
+
 import { useRecoilState } from "recoil";
 import { BackgroundUrl } from "./Store";
 import { useEffect } from "react";
@@ -94,7 +94,7 @@ const Dot = styled.div`
 const Crew = () => {
   const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
   useEffect(() => {
-    setBackgroundUrl(crew)
+    setBackgroundUrl('crew')
   }, [])
   const {crewNumber=0} = useParams();
   const title = 'MEET YOUR CREW';

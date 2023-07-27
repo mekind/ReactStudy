@@ -3,7 +3,7 @@ import SubTitle from "../components/SubTitle"
 import vehicle from "/assets/technology/image-launch-vehicle-portrait.jpg";
 import spaceport from "/assets/technology/image-spaceport-portrait.jpg";
 import spacecapsule from "/assets/technology/image-space-capsule-portrait.jpg";
-import technology from '/assets/technology/background-technology-desktop.jpg';
+
 import { useRecoilState } from "recoil";
 import { BackgroundUrl } from "./Store";
 import { useEffect } from "react";
@@ -100,7 +100,7 @@ const TechImg = styled.div`
 const Technology = () => {
   const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
   useEffect(() => {
-    setBackgroundUrl(technology);
+    setBackgroundUrl('technology');
   }, [])
   const {level=0} = useParams();
   const title = 'SPACE LAUNCH 101';

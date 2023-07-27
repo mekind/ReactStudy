@@ -5,7 +5,6 @@ import moon from '/assets/destination/image-moon.png';
 import mars from '/assets/destination/image-mars.png';
 import europa from '/assets/destination/image-europa.png';
 import titan from '/assets/destination/image-titan.png';
-import destination from '/assets/destination/background-destination-desktop.jpg';
 
 import { useRecoilState } from "recoil";
 import { BackgroundUrl } from "./Store";
@@ -98,7 +97,7 @@ const planetInfo = {
 const Destination = () => {
   const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
   useEffect(() => {
-    setBackgroundUrl(destination);
+    setBackgroundUrl('destination');
   }, [])
 
   const {planet='MOON'} = useParams();

@@ -7,31 +7,70 @@ import MenuItems from './MenuItems'
 const Container = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 3.8%;
-  padding-top: 4%;
+  @media (min-width: 768px) {
+    padding-top: 40px;
+    height: 96px;
+    padding-left: 55px;
+    width: 100%;  
+  }
+
+  @media (min-width: 375px) and (max-width: 768px) {
+    height: 96px;
+    padding-left: 39px;
+    width: 100%;  
+  }
+
+  @media (max-width: 375){
+    padding-left: 24px;
+    width: 100%;  
+  }
 `
 
 const Line = styled.div`
-  margin-left: 1%;
-  margin-right: 1%;
-  width: 30%;
-  height: 1px;
-  background: #979797;
+  @media (min-width: 768px) {
+    position: absolute;
+    margin-left: 64px;
+    paddind-right: 100px;
+    width: 473px;
+    height: 1px;
+    background: rgba(255, 255 ,255, 0.25);
+  }
+
 `
 
 const Menu = styled.div`
-  display: flex;
-  flex-grow:  1;
-  width: 57.6%;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  justify-content: space-around;
-  align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
+  
   :hover {
     border-bottom: solid 3px;
     border-bottom-color: #979797;
+  }
+  @media (min-width: 768px) {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    height: 96px;
+    margin-left: 507px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  @media (min-width: 375px) and (max-width: 768px) {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    height: 96px;
+    margin-left: 231px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  @media (max-width: 375){
+    padding-left: 24px;
+    width: 100%;  
   }
 `
 
