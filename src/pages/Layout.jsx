@@ -54,11 +54,15 @@ const Container = styled.div`
     }
 
     @media (min-width: 375px) and (max-width: 850px) {
+        width: 100%;
+        height: 100%;
         background: url(${(props) => (backgroudUrls[props.url]['tablet'])}) repeat center fixed;
         background-size: cover;
     }
 
     @media (max-width: 375){
+        width: 100%;
+        height: 100%;
         background: url(${(props) => (backgroudUrls[props.url]['mobile'])}) no-repeat center fixed;
         background-size: cover;
     }

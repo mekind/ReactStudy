@@ -1,9 +1,9 @@
 import { NavLink, useParams } from "react-router-dom";
 import SubTitle from "../components/SubTitle";
-import douglas from '/assets/crew/image-douglas-hurley.png';
-import mark from '/assets/crew/image-mark-shuttleworth.png';
-import victor from '/assets/crew/image-victor-glover.png';
-import ano from '/assets/crew/image-anousheh-ansari.png';
+import douglas from '/assets/crew/image-douglas-hurley.webp';
+import mark from '/assets/crew/image-mark-shuttleworth.webp';
+import victor from '/assets/crew/image-victor-glover.webp';
+import ano from '/assets/crew/image-anousheh-ansari.webp';
 
 import { useRecoilState } from "recoil";
 import { BackgroundUrl } from "./Store";
@@ -99,7 +99,6 @@ const LeftWrapper = styled.div`
     text-align: center;
     padding-top: 60px;
     width:100%;
-    margin: 0 auto;
   }
 
   @media (max-width: 375){
