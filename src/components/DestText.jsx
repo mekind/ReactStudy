@@ -12,9 +12,9 @@ const Line = styled.div`
   border: solid;
   border-width: 1px;
   border-color: #979797;
-  width: 445px;
   margin-top: 54px;
   margin-bottom: 28px;
+  width: 100%;
 `
 
 const InfoBox = styled.div`
@@ -36,8 +36,7 @@ const InfoBody = styled.div`
 `
 
 const Name = styled.h2`
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding: 32px 0 8px 0;
 `
 
 const DestText = ({title, body, distance, days}) => {

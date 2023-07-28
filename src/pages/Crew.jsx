@@ -45,49 +45,109 @@ const crewData = [
 
 const Container = styled.div`
   display: flex;
-  height: 81.1%;
+  @media (min-width: 850px) {
+    display: flex;
+    width: 100%;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media (max-width: 375){
+    text-align: center;
+  }
 `;
 
 const Left = styled.div`
-  width: 50%;
-  padding-left: 11.5%;
-  padding-top : 7%;
+  @media (min-width: 850px) {
+    width: 50%;
+    padding-left: 167px;
+    padding-top: 76px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    width: 100%;
+  }
+
+  @media (max-width: 375){
+  }
 `;
 
 const Right = styled.div`
   width: 50%;
-  height: 100%;
-  padding-top : 12%;
-  padding-left: 5%;
+  display: flex;
+  padding-top : 62px;
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    width: 100%;
+    padding-top: 53px;
+    align-items: center;
+    padding-bottom: 62px;
+  }
 `;
 
 const LeftWrapper = styled.div`
-  width: 445px;
-  height:445px;
-  padding-top: 24%;
+  width:100%;
+  @media (min-width: 850px) {
+    padding-top: 154px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    text-align: center;
+    padding-top: 60px;
+    width:100%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 375){
+  }
 `;
 
 
 const RightWrapper = styled.div`
-  width: 445px;
-  height: 100%;
-  width:100%;
+  display: flex;
   overflow: hidden;
+  @media (min-width: 850px) {
+    padding-top: 154px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    text-align: center;
+    padding-top: 60px;
+    width:100%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 375){
+  }    
+
 `;
 
 const Dots = styled.div`
   display: flex;  
-  position: fixed;
-  bottom: 10%;
+  @media (min-width: 850px) {
+    position:fixed;
+    bottom: 94px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    width:100%;
+    padding-top: 40px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 375){
+  }
 `
 
 const Dot = styled.div`
   background: ${(props) => (props.color)};
   opacity: 17.44;
-  margin-top: 10%;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  margin-right: 24px;
   border-radius: 50%;
 `
 

@@ -2,53 +2,48 @@ import { NavLink } from "react-router-dom"
 import { styled } from "styled-components"
 import Logo from './Logo'
 import MenuItems from './MenuItems'
-
+import { useRecoilValue } from 'recoil';
+import { BackgroundUrl } from '../pages/Store';
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-  @media (min-width: 768px) {
-    padding-top: 40px;
-    height: 96px;
-    padding-left: 55px;
+  @media (min-width: 850px) {
+    padding: 40px 0px 0px 55px;
     width: 100%;  
   }
-
-  @media (min-width: 375px) and (max-width: 768px) {
+  
+  @media (min-width: 375px) and (max-width: 850px) {
     height: 96px;
     padding-left: 39px;
     width: 100%;  
+    padding-bottom: 21px;
   }
-
+  
   @media (max-width: 375){
     padding-left: 24px;
     width: 100%;  
   }
-`
+  `
 
 const Line = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     position: absolute;
-    margin-left: 64px;
-    paddind-right: 100px;
+    margin-left: 112px;
+    z-index: 1;
     width: 473px;
     height: 1px;
     background: rgba(255, 255 ,255, 0.25);
   }
-
-`
+  
+  `
 
 const Menu = styled.div`
-  
-  :hover {
-    border-bottom: solid 3px;
-    border-bottom-color: #979797;
-  }
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     position: relative;
+    z-index: 0;
     display: flex;
     flex-grow: 1;
-    height: 96px;
     margin-left: 507px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
@@ -56,7 +51,7 @@ const Menu = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (min-width: 375px) and (max-width: 850px) {
     position: relative;
     display: flex;
     flex-grow: 1;
@@ -75,12 +70,7 @@ const Menu = styled.div`
 `
 
 const NavStyle = styled(NavLink)`
-  padding-top: 4.3%;
-  padding-bottom: 4.2%;
   text-decoration: none;
-  :hover {
-    border-bottom: 0;
-  }
 `
 
 const menuList = [
@@ -91,10 +81,7 @@ const menuList = [
 ];
 
 const Header = () => {
-  const activeStyles = {
-    'borderBottom': 'solid',
-    'borderBottomColor': '#FFFFFF',
-  }
+  const now = useRecoilValue(BackgroundUrl).toUpperCase();
   return (
     <Container>
       <Logo/>
@@ -103,10 +90,9 @@ const Header = () => {
         {menuList.map((menu) => 
           (<NavStyle 
             key={menu.name} 
-            style={({isActive}) => (isActive?  activeStyles: undefined)}
             to={menu.url}
             >
-            <MenuItems number={menu.number} name={menu.name}/>
+            <MenuItems number={menu.number} name={menu.name} now={now}/>
           </NavStyle>
         ))}
       </Menu>

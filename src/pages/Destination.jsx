@@ -16,45 +16,116 @@ import SubTitle from "/src/components/SubTitle";
 import DestText from "../components/DestText";
 
 const Container = styled.div`
-  display: flex;
-  height: 81.1%;
+  @media (min-width: 850px) {
+    display: flex;
+    width: 100%;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media (max-width: 375){
+    text-align: center;
+  }
 `;
 
 const Left = styled.div`
-  width: 50%;
-  padding-left: 11.5%;
-  padding-top : 8.4%;
+  @media (min-width: 850px) {
+    width: 50%;
+    padding-left: 167px;
+    padding-top: 76px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+  }
+
+  @media (max-width: 375){
+  }
 `;
 
 const Right = styled.div`
-  width: 50%;
-  padding-top : 12%;
-  padding-left: 5%;
+  /* background-color: green; */
+  @media (min-width: 850px) {
+    width: 50%;
+    padding-left: 112px;
+    padding-top: 174px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    padding-top: 53px;
+    align-items: center;
+    padding-bottom: 62px;
+  }
+
+  @media (max-width: 375){
+  }
 `;
 
 const LeftWrapper = styled.div`
-  width: 445px;
-  height:445px;
-  padding-left: 4.4%;
-  padding-top: 10.7%;
+  @media (min-width: 850px) {
+    width: 445px;
+    height:445px;
+    margin:0 auto;
+    margin-top: 97px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    width: 300px;
+    height:300px;
+    margin:0 auto;
+    padding-top: 60px;
+  }
+
+  @media (max-width: 375){
+  }
 `;
 
 
 const RightWrapper = styled.div`
-  width: 445px;
+  @media (min-width: 850px) {
+    width: 445px;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+  width: 573px;
+    margin: 0 auto;
+    padding-top: 53px;
+  }
+
+  @media (max-width: 375){
+  }
 `;
 
-const PlanetImg = styled.div`
-  
+const PlanetImg = styled.img.attrs(props => ({
+  src: props.planeturl
+}))`
+  @media (min-width: 850px) {
+    width: 445px;
+    height:445px;
+    margin:0 auto;
+  }
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    width: 300px;
+    height:300px;
+    margin:0 auto;
+  }
 `
 
 const Planets = styled.div`
   display: flex;
-  width: 285px;
   justify-content: space-around;
-  :hover {
-    border-bottom: solid 3px;
-    border-bottom-color: #979797;
+  width: 285px;
+
+
+  @media (min-width: 375px) and (max-width: 850px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 375){
   }
 `
 
@@ -103,19 +174,13 @@ const Destination = () => {
   const {planet='MOON'} = useParams();
   const title = 'PICK YOUR DESTINATION';
   const planetList = ['MOON', 'MARS', 'EUROPA', 'TITAN']
-  const activeStyles = {
-    'borderBottom': 'solid',
-    'borderBottomColor': '#FFFFFF',
-  }
 
   return (
     <Container>
       <Left>
         <SubTitle number='01' title={title}/>
         <LeftWrapper>
-          <PlanetImg>
-            <img src={planetInfo[planet].imgUrl}/>
-          </PlanetImg>
+          <PlanetImg planeturl={planetInfo[planet].imgUrl}/>
         </LeftWrapper>
       </Left>
       <Right>
@@ -125,9 +190,8 @@ const Destination = () => {
               <NavStyle 
                 key={now} 
                 to={'/destination/'+now}
-                style={({isActive}) => (isActive || now == planet ? activeStyles : undefined)}
               >
-                <MenuItems number={''} name={now}/>
+                <MenuItems number={''} name={now} now={planet} type='destination'/>
               </NavStyle>
             ))}
           </Planets>

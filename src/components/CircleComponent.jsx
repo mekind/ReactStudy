@@ -1,7 +1,8 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
 
-const Circle = styled.div`
+const Circle = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,10 +12,14 @@ const Circle = styled.div`
   width: 274px;
   margin:0 auto;
   transition: outline 0.2s linear;
+  text-decoration: none;
   outline: 0px solid rgba(255, 255, 255, 0.1);
   &:hover {
     cursor: pointer;
     outline-width: 88px;
+  }
+  &:visited {
+    color: black;
   }
 `
 
@@ -25,7 +30,7 @@ const Explore = styled.p`
 
 const CircleComponent = () => {
   return (
-    <Circle>
+    <Circle to='/destination'>
       <Explore>EXPLORE</Explore>
     </Circle>
   )

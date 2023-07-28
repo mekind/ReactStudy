@@ -7,12 +7,12 @@ import { useEffect } from 'react'
 
 
 const Container = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     display: flex;
     width: 100%;
   }
 
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (min-width: 375px) and (max-width: 850px) {
     text-align: center;
   }
 
@@ -22,12 +22,12 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     width: 50%;
     padding-left: 165px;
   }
 
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (min-width: 375px) and (max-width: 850px) {
   }
 
   @media (max-width: 375){
@@ -35,12 +35,12 @@ const Left = styled.div`
 `;
 
 const Right = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     width: 50%;
     padding-left: 281px;
   }
 
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (min-width: 375px) and (max-width: 850px) {
     /* width: 100%; */
     padding-bottom: 90px;
     padding-top: 156px;
@@ -52,12 +52,12 @@ const Right = styled.div`
 `;
 
 const LeftWrapper = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     width: 450px;
     padding-top: 35%;
   }
 
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (min-width: 375px) and (max-width: 850px) {
     padding-top:50px;
     width: 450px;
     margin:0 auto;
@@ -73,11 +73,11 @@ const LeftWrapper = styled.div`
 
 const RightWrapper = styled.div`
   width: 450px;
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     padding-top:395px;
   }
 
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (min-width: 375px) and (max-width: 850px) {
     margin: 0 auto;
   }
 

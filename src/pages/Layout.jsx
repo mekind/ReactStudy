@@ -21,7 +21,7 @@ import technology_tablet from '/assets/technology/background-technology-tablet.j
 import technology_mobile from '/assets/technology/background-technology-mobile.jpg';
 
 
-const backgroudUrl = {
+const backgroudUrls = {
     home : {
         desktop: home,
         tablet: home_tablet,
@@ -46,21 +46,20 @@ const backgroudUrl = {
 
 const Container = styled.div`
     display: block;
-    
-    @media (min-width: 768px) {
-        width: 100vw;
-        height: 100vh;
-        background: url(${(props) => (backgroudUrl[props.url]['desktop'])}) no-repeat center fixed;
+    width: 100vw;
+    height: 100vh;
+    @media (min-width: 850px) {
+        background: url(${(props) => (backgroudUrls[props.url]['desktop'])}) no-repeat center fixed;
         background-size: cover;
     }
 
-    @media (min-width: 375px) and (max-width: 768px) {
-        background: url(${(props) => (backgroudUrl[props.url]['tablet'])}) no-repeat center fixed;
-        /* background-size: cover; */
+    @media (min-width: 375px) and (max-width: 850px) {
+        background: url(${(props) => (backgroudUrls[props.url]['tablet'])}) repeat center fixed;
+        background-size: cover;
     }
 
     @media (max-width: 375){
-        background: url(${(props) => (backgroudUrl[props.url]['mobile'])}) no-repeat center fixed;
+        background: url(${(props) => (backgroudUrls[props.url]['mobile'])}) no-repeat center fixed;
         background-size: cover;
     }
 `;
