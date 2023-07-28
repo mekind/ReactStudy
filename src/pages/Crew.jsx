@@ -48,11 +48,13 @@ const Container = styled.div`
   @media (min-width: 850px) {
     display: flex;
     width: 100%;
+    height: calc(100% - 136px);
   }
 
   @media (min-width: 375px) and (max-width: 850px) {
     flex-direction: column;
     text-align: center;
+    height: calc(100% - 96px);
   }
 
   @media (max-width: 375){
@@ -78,13 +80,12 @@ const Left = styled.div`
 const Right = styled.div`
   width: 50%;
   display: flex;
-  padding-top : 62px;
-
+  flex-direction: column;
+  overflow: hidden;
   @media (min-width: 375px) and (max-width: 850px) {
     width: 100%;
-    padding-top: 53px;
+    margin: 0 auto;
     align-items: center;
-    padding-bottom: 62px;
   }
 `;
 
@@ -108,16 +109,16 @@ const LeftWrapper = styled.div`
 
 const RightWrapper = styled.div`
   display: flex;
+  height: calc(100% - 62px);
   overflow: hidden;
   @media (min-width: 850px) {
-    padding-top: 154px;
+    padding-top: 62px;
+
   }
 
   @media (min-width: 375px) and (max-width: 850px) {
-    text-align: center;
-    padding-top: 60px;
-    width:100%;
-    margin: 0 auto;
+    height: calc(100% - 40px);
+    padding-top: 40px;
   }
 
   @media (max-width: 375){
@@ -135,7 +136,7 @@ const Dots = styled.div`
   @media (min-width: 375px) and (max-width: 850px) {
     width:100%;
     padding-top: 40px;
-    margin: 0 auto;
+    justify-content: center;
   }
 
   @media (max-width: 375){
@@ -183,7 +184,7 @@ const Crew = () => {
       </Left>
       <Right>
         <RightWrapper>
-          <img src={crewData[crewNumber].imgUrl}/>
+          <img src={crewData[crewNumber].imgUrl} />
         </RightWrapper>
       </Right>
     </Container>   

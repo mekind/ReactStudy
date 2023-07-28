@@ -4,7 +4,7 @@ const Container = styled.div`
   display: flex;
   @media (min-width: 375px) and (max-width: 850px) {
     padding-left: 38.5px;
-    padding-top: 76px;
+    padding-top: 40px;
   }
 `
 

@@ -7,15 +7,17 @@ const Container = styled.div`
   ${({active, type}) => {
     switch(type){
       case 'destination':
+        console.log(type)
         return {
           'padding-bottom': active ? '12px' : '15px',
           'border-bottom': active ? 'solid 3px  #FFFFFF' : '',
         }
         default:
+          console.log(type)
           return {
             'padding-top' : '39px',
             'padding-bottom': active ? '35px' : '38px',
-          'border-bottom': active ? 'solid 3px  #FFFFFF' : '',
+            'border-bottom': active ? 'solid 3px  #FFFFFF' : '',
         }
     }
   }};
