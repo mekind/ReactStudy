@@ -30,6 +30,7 @@ const datas = [
 const Tech = styled.div`
   display: block;
   width: 100%;
+  height: 1024px;
 `
 
 const Container = styled.div`

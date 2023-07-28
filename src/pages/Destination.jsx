@@ -23,6 +23,7 @@ const Container = styled.div`
 
   @media (min-width: 375px) and (max-width: 850px) {
     display: flex;
+    height: 1024px;
     flex-direction: column;
     text-align: center;
   }

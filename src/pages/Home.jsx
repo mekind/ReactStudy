@@ -14,6 +14,7 @@ const Container = styled.div`
 
   @media (min-width: 375px) and (max-width: 850px) {
     text-align: center;
+    height: 1024px;
   }
 
   @media (max-width: 375){

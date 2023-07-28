@@ -48,7 +48,7 @@ const Container = styled.div`
   @media (min-width: 850px) {
     display: flex;
     width: 100%;
-    height: calc(100% - 136px);
+    height: 1024px;
   }
 
   @media (min-width: 375px) and (max-width: 850px) {
