@@ -6,6 +6,10 @@ const Info = styled.div`
   font-size: 18px;
   font-family: 'Bellefair';
   color: #FFFFFF;
+
+  @media (max-width: 400px){
+    flex-direction: column;
+  }
 `
 
 const Line = styled.div`
@@ -15,10 +19,17 @@ const Line = styled.div`
   margin-top: 54px;
   margin-bottom: 28px;
   width: 100%;
+  @media (max-width: 400px){
+    margin: 32px 0 32px 0;
+  }
 `
 
 const InfoBox = styled.div`
   width: 50%;
+  @media (max-width: 400px){
+    width: 100%;
+    margin: 0 0 32px 0;
+  }
 `
 
 const InfoTitle = styled.div`
@@ -37,6 +48,19 @@ const InfoBody = styled.div`
 
 const Name = styled.h2`
   padding: 32px 0 8px 0;
+  @media (max-width: 400px){
+    padding: 20px 0 0px 0;
+    font-size: 56px;
+  }
+`
+
+const DestBody = styled(BodyText)`
+  @media (max-width: 400px){
+    padding: 1px 0 0 0;
+    font-size: 15px;
+    width: 327px;
+    margin: 0 auto;
+  }
 `
 
 const DestText = ({title, body, distance, days}) => {
@@ -46,7 +70,7 @@ const DestText = ({title, body, distance, days}) => {
   return (
     <div>
       <Name>{title}</Name>
-      <BodyText>{body}</BodyText>
+      <DestBody>{body}</DestBody>
       <Line></Line>
       <Info>
         <InfoBox>

@@ -20,7 +20,7 @@ const Container = styled.div`
     padding-bottom: 21px;
   }
   
-  @media (max-width: 375){
+  @media (max-width: 400px){
     padding-left: 24px;
     width: 100%;  
   }
@@ -63,9 +63,9 @@ const Menu = styled.div`
     align-items: center;
   }
 
-  @media (max-width: 375){
-    padding-left: 24px;
-    width: 100%;  
+  @media (max-width: 400px){
+    background-color:red;
+    font-size: 0px;
   }
 `
 

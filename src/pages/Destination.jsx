@@ -21,14 +21,16 @@ const Container = styled.div`
     width: 100%;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     display: flex;
     height: 1024px;
     flex-direction: column;
     text-align: center;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width:100%;
+    height: 850px;
     text-align: center;
   }
 `;
@@ -40,10 +42,8 @@ const Left = styled.div`
     padding-top: 76px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
-  }
-
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width:100%;
   }
 `;
 
@@ -55,13 +55,14 @@ const Right = styled.div`
     padding-top: 174px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     padding-top: 53px;
     align-items: center;
     padding-bottom: 62px;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width:100%;
   }
 `;
 
@@ -73,14 +74,15 @@ const LeftWrapper = styled.div`
     margin-top: 97px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     width: 300px;
     height:300px;
     margin:0 auto;
     padding-top: 60px;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width:100%;
   }
 `;
 
@@ -90,13 +92,14 @@ const RightWrapper = styled.div`
     width: 445px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
   width: 573px;
     margin: 0 auto;
     padding-top: 53px;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width:100%;
   }
 `;
 
@@ -109,9 +112,15 @@ const PlanetImg = styled.img.attrs(props => ({
     margin:0 auto;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     width: 300px;
     height:300px;
+    margin:0 auto;
+  }
+
+  @media (max-width: 400px) {
+    width: 170px;
+    height:170px;
     margin:0 auto;
   }
 `
@@ -122,11 +131,13 @@ const Planets = styled.div`
   width: 285px;
 
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     margin: 0 auto;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    margin: 0 auto;
+    padding: 26px 0 20px 0;
   }
 `
 

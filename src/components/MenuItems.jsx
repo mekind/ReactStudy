@@ -19,6 +19,15 @@ const Container = styled.div`
         }
     }
   }};
+
+  @media (max-width: 400px){
+    width: 0;
+    height: 0;
+    font-size: 0;
+    padding: 0;
+    margin:0;
+    background: red;
+  }
   
   &:hover:not(${props => !props.active}){
     border-bottom: solid 3px  #979797;

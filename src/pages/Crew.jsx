@@ -48,17 +48,20 @@ const Container = styled.div`
   @media (min-width: 850px) {
     display: flex;
     width: 100%;
-    height: 1024px;
   }
-
-  @media (min-width: 375px) and (max-width: 850px) {
+  
+  @media (min-width: 400px) and (max-width: 850px) {
     flex-direction: column;
     text-align: center;
+    height: 1024px;
     height: calc(100% - 96px);
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width:100%;
+    height: 850px;
     text-align: center;
+    flex-direction: column;
   }
 `;
 
@@ -73,7 +76,7 @@ const Left = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
   }
 `;
 
@@ -82,10 +85,13 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     width: 100%;
     margin: 0 auto;
     align-items: center;
+  }
+  @media (max-width: 400px){
+    width: 100%;
   }
 `;
 
@@ -101,7 +107,8 @@ const LeftWrapper = styled.div`
     width:100%;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+
   }
 `;
 
@@ -115,13 +122,18 @@ const RightWrapper = styled.div`
 
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     height: calc(100% - 40px);
     padding-top: 40px;
   }
 
-  @media (max-width: 375){
-  }    
+  @media (max-width: 400px){
+    width: 327px;
+    height: 223px;
+    margin: 0 auto;
+    justify-content: center;
+    border-bottom: 1px solid #979797;
+  }     
 
 `;
 
@@ -132,13 +144,16 @@ const Dots = styled.div`
     bottom: 94px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     width:100%;
     padding-top: 40px;
     justify-content: center;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width:100%;
+    justify-content: center;
+    margin: 32px 0 32px 0;
   }
 `
 
@@ -149,7 +164,14 @@ const Dot = styled.div`
   height: 15px;
   margin-right: 24px;
   border-radius: 50%;
+  @media (max-width: 400px){
+    width: 10px;
+    height: 10px;
+  }
+  
 `
+
+
 
 const Crew = () => {
   const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)

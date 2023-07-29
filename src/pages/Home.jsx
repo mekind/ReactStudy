@@ -7,18 +7,20 @@ import { useEffect } from 'react'
 
 
 const Container = styled.div`
+  width: 100%;
   @media (min-width: 850px) {
     display: flex;
-    width: 100%;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     text-align: center;
     height: 1024px;
   }
 
-  @media (max-width: 375){
+
+  @media (max-width: 400px){
     text-align: center;
+    height: 844px;
   }
 `;
 
@@ -28,10 +30,12 @@ const Left = styled.div`
     padding-left: 165px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
+    width: 100%;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
+    width: 100%;
   }
 `;
 
@@ -41,13 +45,13 @@ const Right = styled.div`
     padding-left: 281px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     /* width: 100%; */
     padding-bottom: 90px;
     padding-top: 156px;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
     width: 100%;  
   }
 `;
@@ -58,13 +62,13 @@ const LeftWrapper = styled.div`
     padding-top: 35%;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     padding-top:50px;
     width: 450px;
     margin:0 auto;
   }
 
-  @media (max-width: 375){
+  @media (max-width: 400px){
     padding-top:48px;
     width: 327px;
     margin:0 auto;
@@ -78,12 +82,13 @@ const RightWrapper = styled.div`
     padding-top:395px;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
+  @media (min-width: 400px) and (max-width: 850px) {
     margin: 0 auto;
   }
 
-  @media (max-width: 375){
-
+  @media (max-width: 400px){
+    width: 100%;
+    padding-top: 81px;
   }
 `;
 
