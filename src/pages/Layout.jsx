@@ -46,8 +46,8 @@ const backgroudUrls = {
 
 const Container = styled.div`
     display: block;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vw;
+    min-width: 100vw;
     @media (min-width: 850px) {
         background: url(${(props) => (backgroudUrls[props.url]['desktop'])}) no-repeat center fixed;
         background-size: cover;

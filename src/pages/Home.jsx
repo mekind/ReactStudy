@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 
 const Container = styled.div`
   width: 100%;
+  height: 100%;
   @media (min-width: 850px) {
     display: flex;
   }

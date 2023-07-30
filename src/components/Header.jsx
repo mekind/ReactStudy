@@ -37,7 +37,7 @@ const Line = styled.div`
     position: absolute;
     margin-left: 112px;
     z-index: 1;
-    width: 473px;
+    width: 32.84%;
     height: 1px;
     background: rgba(255, 255 ,255, 0.25);
   }
@@ -49,7 +49,7 @@ const Menu = styled.div`
     z-index: 0;
     display: flex;
     flex-grow: 1;
-    margin-left: 507px;
+    margin-left: 35.2%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     justify-content: space-around;

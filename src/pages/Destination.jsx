@@ -14,6 +14,72 @@ import { styled } from "styled-components";
 import MenuItems from "../components/MenuItems";
 import SubTitle from "/src/components/SubTitle";
 import DestText from "../components/DestText";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
+// import Kakao from '../kakao';
+
+const KakaoScript = () => (
+  <script
+  type="text/javascript"
+  src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0cdcb1926e7104866a36cc3b90d81242&libraries=services,clusterer"
+  />
+);
+
+
+
+
+const Destination = () => {
+  const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
+  useEffect(() => {
+    setBackgroundUrl('destination');
+  }, [])
+
+  const {planet='MOON'} = useParams();
+  const title = 'PICK YOUR DESTINATION';
+  const planetList = ['MOON', 'MARS', 'EUROPA', 'TITAN']
+
+  return (
+    <Container>
+      <KakaoScript/>
+      {/* <Left>
+        <SubTitle number='01' title={title}/>
+        <LeftWrapper>
+          <PlanetImg planeturl={planetInfo[planet].imgUrl}/>
+        </LeftWrapper>
+      </Left>
+      <Right>
+        <RightWrapper>
+          <Planets>
+            {planetList.map( now => (
+              <NavStyle 
+                key={now} 
+                to={'/destination/'+now}
+              >
+                <MenuItems number={''} name={now} now={planet} type='destination'/>
+              </NavStyle>
+            ))}
+          </Planets>
+          <DestText 
+            title={planet} 
+            body={planetInfo[planet].text}
+            distance={planetInfo[planet].distance}
+            days={planetInfo[planet].days}
+          /> 
+        </RightWrapper>
+      </Right> */}
+      <Map
+      center={{ lat: 33.5563, lng: 126.79581 }}
+      style={{ width: "100%", height: "360px" }}
+      >
+        <MapMarker position={{ lat: 33.55635, lng: 126.795841 }}>
+          <div style={{color:"#000"}}>Hello World!</div>
+        </MapMarker>
+      </Map>
+    </Container>    
+  )
+}
+
+export default Destination
+
 
 const Container = styled.div`
   @media (min-width: 850px) {
@@ -173,47 +239,3 @@ const planetInfo = {
     days : '7 years'
   },
 }
-
-const Destination = () => {
-  const [ backgroundUrl, setBackgroundUrl ] = useRecoilState(BackgroundUrl)
-  useEffect(() => {
-    setBackgroundUrl('destination');
-  }, [])
-
-  const {planet='MOON'} = useParams();
-  const title = 'PICK YOUR DESTINATION';
-  const planetList = ['MOON', 'MARS', 'EUROPA', 'TITAN']
-
-  return (
-    <Container>
-      <Left>
-        <SubTitle number='01' title={title}/>
-        <LeftWrapper>
-          <PlanetImg planeturl={planetInfo[planet].imgUrl}/>
-        </LeftWrapper>
-      </Left>
-      <Right>
-        <RightWrapper>
-          <Planets>
-            {planetList.map( now => (
-              <NavStyle 
-                key={now} 
-                to={'/destination/'+now}
-              >
-                <MenuItems number={''} name={now} now={planet} type='destination'/>
-              </NavStyle>
-            ))}
-          </Planets>
-          <DestText 
-            title={planet} 
-            body={planetInfo[planet].text}
-            distance={planetInfo[planet].distance}
-            days={planetInfo[planet].days}
-          /> 
-        </RightWrapper>
-      </Right>
-    </Container>    
-  )
-}
-
-export default Destination
