@@ -4,6 +4,9 @@ import Logo from './Logo'
 import MenuItems from './MenuItems'
 import { useRecoilValue } from 'recoil';
 import { BackgroundUrl } from '../pages/Store';
+import hambuger from '/assets/shared/icon-hamburger.svg';
+import close from '/assets/shared/icon-close.svg';
+import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -21,10 +24,13 @@ const Container = styled.div`
   }
   
   @media (max-width: 400px){
-    padding-left: 24px;
-    width: 100%;  
+    align-items: normal;
+    position: absolute;
+    padding: 0;
+    width: 100%; 
+    height: 100%;
   }
-  `
+`
 
 const Line = styled.div`
   @media (min-width: 850px) {
@@ -35,8 +41,7 @@ const Line = styled.div`
     height: 1px;
     background: rgba(255, 255 ,255, 0.25);
   }
-  
-  `
+`
 
 const Menu = styled.div`
   @media (min-width: 850px) {
@@ -51,8 +56,7 @@ const Menu = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 375px) and (max-width: 850px) {
-    position: relative;
+  @media (min-width: 400px) and (max-width: 850px) {
     display: flex;
     flex-grow: 1;
     height: 96px;
@@ -63,14 +67,37 @@ const Menu = styled.div`
     align-items: center;
   }
 
-  @media (max-width: 400px){
-    background-color:red;
-    font-size: 0px;
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    width: 254px;
+    right: 0;
+    position: absolute;
+    padding-top: 118px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    visibility: ${props => props.isopen ? 'visible': 'hidden'};
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* backdrop-filter: blur(100px); */
   }
 `
 
 const NavStyle = styled(NavLink)`
   text-decoration: none;
+`
+
+const Hamburger = styled.div`
+
+  @media (max-width: 400px) {
+    position: absolute;
+    top: 33px;
+    right: 24px;
+    background: url(${props => props.isopen ? close: hambuger}) center;
+    background-size: cover;
+    width: ${props => props.isopen ? '24px': '19.09px'};
+    height: ${props => props.isopen ? '21px': '19.09px'};
+  }
 `
 
 const menuList = [
@@ -82,11 +109,16 @@ const menuList = [
 
 const Header = () => {
   const now = useRecoilValue(BackgroundUrl).toUpperCase();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClick = () => {
+    setIsOpen(!isOpen);
+  }
   return (
     <Container>
       <Logo/>
       <Line/>
-      <Menu>
+      <Menu isopen={isOpen}>
         {menuList.map((menu) => 
           (<NavStyle 
             key={menu.name} 
@@ -96,6 +128,7 @@ const Header = () => {
           </NavStyle>
         ))}
       </Menu>
+      <Hamburger onClick={onClick} isopen={isOpen}/>
     </Container>
   )
 }

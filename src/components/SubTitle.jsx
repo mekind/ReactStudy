@@ -10,7 +10,7 @@ const Container = styled.div`
   @media (max-width: 400px) {
     text-align: center;
     justify-content: center;
-    padding: 24px 0 32px 0;
+    padding: 112px 0 32px 0;
   }
 `
 

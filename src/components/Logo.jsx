@@ -9,6 +9,11 @@ const Container = styled.div`
   a {
     border: 0;
   }
+
+  @media (max-width: 400px){
+    padding: 24px 0 0 24px;
+    position: absolute;
+  }
 `
 
 

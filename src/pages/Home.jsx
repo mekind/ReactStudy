@@ -69,7 +69,7 @@ const LeftWrapper = styled.div`
   }
 
   @media (max-width: 400px){
-    padding-top:48px;
+    padding-top: 112px;
     width: 327px;
     margin:0 auto;
   }

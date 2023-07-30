@@ -72,7 +72,7 @@ const Layout = () => {
     const backgroundUrl = useRecoilValue(BackgroundUrl);
     return (
         <Container url={backgroundUrl}>
-            {/* <Header/> */}
+            <Header/>
             <Outlet/>
         </Container>
     )
