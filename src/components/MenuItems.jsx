@@ -31,8 +31,8 @@ const Container = styled.div`
 
   @media (max-width: 500px){
     &:hover:not(${props => !props.active}){
-      border-bottom: solid 3px  #979797;
-      padding-bottom: ${props => props.type === 'destination' ? '8px' : '0px'};
+      border-bottom: ${props => props.type === 'destination' ? 'solid 3px  #979797' : '0px'};
+      padding-bottom: ${props => props.type === 'destination' ? '8px' : '32px'};
     }  
   }
 
