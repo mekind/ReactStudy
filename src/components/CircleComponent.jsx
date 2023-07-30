@@ -14,12 +14,17 @@ const Circle = styled(NavLink)`
   transition: outline 0.2s linear;
   text-decoration: none;
   outline: 0px solid rgba(255, 255, 255, 0.1);
+  color: #0B0D17;
   &:hover {
     cursor: pointer;
+    color: #0B0D17;
     outline-width: 88px;
   }
+  &:active {
+    color: #0B0D17;
+  }
   &:visited {
-    color: black;
+    color: #0B0D17;
   }
 `
 

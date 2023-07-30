@@ -60,7 +60,8 @@ const Number = styled(Name)`
   font-family: 'BarlowBold';
   padding-right: 11px;
   @media (max-width: 850px) {
-
+    display: none;
+    padding-right: 0px;
   }
 `;
 
