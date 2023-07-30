@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 const Container = styled.div`
   display: flex;
 
-  @media (min-width: 400px){
+  @media (min-width: 500px){
     ${({active, type}) => {
       switch(type){
         case 'destination':
@@ -22,15 +22,27 @@ const Container = styled.div`
     }};
   }
 
-  @media (min-width: 400px){
+  @media (min-width: 500px){
     &:hover:not(${props => !props.active}){
-    border-bottom: solid 3px  #979797;
-    padding-bottom: ${props => props.type === 'header' ? '35px' : '12px'};
+      border-bottom: solid 3px  #979797;
+      padding-bottom: ${props => props.type === 'header' ? '35px' : '12px'};
     }  
   }
 
-  @media (max-width: 400px){
-    padding: 0 0 32px 32px;
+  @media (max-width: 500px){
+    &:hover:not(${props => !props.active}){
+      border-bottom: solid 3px  #979797;
+      padding-bottom: ${props => props.type === 'destination' ? '8px' : '0px'};
+    }  
+  }
+
+  @media (max-width: 500px){
+    padding: ${props => (props.type === 'header') ? '0 0 32px 32px': '0 0 8px 0'};
+    border-bottom: ${props => (props.active && props.type === 'destination') ? 'solid 3px #FFFFFF': '0'};
+  }
+
+  &:visited {
+    color: #FFFFFF;
   }
 `
 
@@ -61,6 +73,7 @@ const MenuItems = ({
   now = 'HOME',
 }) => {
   const active = name === now ? 'true' : undefined;
+
   return (
     <Container active={active} type={type}>
       {number && <Number>{number}</Number>}

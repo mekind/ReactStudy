@@ -21,14 +21,14 @@ const Container = styled.div`
     width: 100%;
   }
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     display: flex;
     height: 1024px;
     flex-direction: column;
     text-align: center;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width:100%;
     height: 850px;
     text-align: center;
@@ -42,7 +42,7 @@ const Left = styled.div`
     padding-top: 76px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width:100%;
   }
 `;
@@ -55,13 +55,13 @@ const Right = styled.div`
     padding-top: 174px;
   }
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     padding-top: 53px;
     align-items: center;
     padding-bottom: 62px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width:100%;
   }
 `;
@@ -74,14 +74,14 @@ const LeftWrapper = styled.div`
     margin-top: 97px;
   }
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     width: 300px;
     height:300px;
     margin:0 auto;
     padding-top: 60px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width:100%;
   }
 `;
@@ -92,13 +92,13 @@ const RightWrapper = styled.div`
     width: 445px;
   }
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
   width: 573px;
     margin: 0 auto;
     padding-top: 53px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width:100%;
   }
 `;
@@ -112,13 +112,13 @@ const PlanetImg = styled.img.attrs(props => ({
     margin:0 auto;
   }
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     width: 300px;
     height:300px;
     margin:0 auto;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 170px;
     height:170px;
     margin:0 auto;
@@ -131,11 +131,11 @@ const Planets = styled.div`
   width: 285px;
 
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     margin: 0 auto;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     margin: 0 auto;
     padding: 26px 0 20px 0;
   }
@@ -145,16 +145,13 @@ const NavStyle = styled(NavLink)`
   padding-top:1%;
   padding-bottom: 1%;
   text-decoration: none;
-  :hover {
-    border: 0;
-  }
 `
 
 const planetInfo = {
   MOON : {
     imgUrl : moon,
     text : 'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.',
-    distance : '384,400 km',
+  distance : '384,400 km',
     days : '3 days'
   },
   MARS: {

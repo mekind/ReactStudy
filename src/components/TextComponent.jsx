@@ -7,14 +7,14 @@ export const BodyText = styled.p`
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     font-size: 15px;
   }
 `
 
 const SubTitle = styled.h5`
   margin-top: 24px;
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     font-size : 16px;
     letter-spacing: 2.7px;
   }
@@ -22,7 +22,7 @@ const SubTitle = styled.h5`
 
 const Title = styled.h1`
   padding: 24px 0 24px 0;
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     padding: 16px 0 16px 0;
     font-size : 80px;
   }

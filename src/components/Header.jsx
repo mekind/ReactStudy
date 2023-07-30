@@ -23,12 +23,12 @@ const Container = styled.div`
     padding-bottom: 21px;
   }
   
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     align-items: normal;
     position: absolute;
     padding: 0;
     width: 100%; 
-    height: 100%;
+    height: ${props => props.isopen ? '100%': '64px'};
   }
 `
 
@@ -56,7 +56,7 @@ const Menu = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     display: flex;
     flex-grow: 1;
     height: 96px;
@@ -67,8 +67,8 @@ const Menu = styled.div`
     align-items: center;
   }
 
-  @media (max-width: 400px) {
-    display: flex;
+  @media (max-width: 500px) {
+    display: ${props => props.isopen ? 'flex': 'none'};
     flex-direction: column;
     width: 254px;
     right: 0;
@@ -77,9 +77,6 @@ const Menu = styled.div`
     height: 100%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
-    visibility: ${props => props.isopen ? 'visible': 'hidden'};
-    /* background: rgba(255, 255, 255, 0.1); */
-    /* backdrop-filter: blur(100px); */
   }
 `
 
@@ -89,7 +86,7 @@ const NavStyle = styled(NavLink)`
 
 const Hamburger = styled.div`
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     position: absolute;
     top: 33px;
     right: 24px;
@@ -115,7 +112,7 @@ const Header = () => {
     setIsOpen(!isOpen);
   }
   return (
-    <Container>
+    <Container isopen={isOpen}>
       <Logo/>
       <Line/>
       <Menu isopen={isOpen}>

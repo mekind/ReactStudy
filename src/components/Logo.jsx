@@ -10,7 +10,7 @@ const Container = styled.div`
     border: 0;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     padding: 24px 0 0 24px;
     position: absolute;
   }

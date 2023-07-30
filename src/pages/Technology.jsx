@@ -30,11 +30,11 @@ const datas = [
 const Tech = styled.div`
   display: block;
   width: 100%;
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     height: 1024px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width:100%;
     height: 850px;
     text-align: center;
@@ -49,12 +49,12 @@ const Container = styled.div`
     height: calc(100% - 136px);
   }
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -62,13 +62,13 @@ const Container = styled.div`
 
 const Left = styled.div`
   width: 60%;
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     width: 100%;
     height: 494px;
     text-align : center;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 100%;
     text-align : center;
   }
@@ -80,13 +80,13 @@ const Right = styled.div`
   width: 40%;
   padding: 26px 0 0 0;
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     width: 100%;
     padding: 60px 0 0 0;
     height: 370px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width: 100%;
     padding: 0;
   }
@@ -103,7 +103,7 @@ const LeftWrapper = styled.div`
     align-items: center;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 100%;
     padding: 0;
   }
@@ -115,12 +115,12 @@ const RightWrapper = styled.div`
   height: 527px;
   background: url(${props => props.url}) bottom no-repeat;
   background-size: cover;
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     width:100%;
     height: 310px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     width: 100%;
     height: 170px;
   }
@@ -128,14 +128,14 @@ const RightWrapper = styled.div`
 
 const Circles = styled.div`
   padding-right: 80px;
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     display: flex;
     order: 3;
     padding: 56px 0 44px 0;
     justify-content: center;  
     height: calc(100% - 96px);
   }
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     padding: 34px 0 26px 0;
     display: flex; 
     justify-content: center;  
@@ -163,7 +163,7 @@ const Circle = styled.div`
     margin: 0 8px 0 8px;
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     height: 40px;
     width: 40px;
     margin: 0 8px 0 8px;
@@ -185,7 +185,7 @@ const Title = styled.p`
   margin-right: 28px;
   letter-spacing: 4.72px;
   color: #FFFFFF;
-  @media (max-width: 400px){
+  @media (max-width: 500px){
     font-size: 16px;
     letter-spacing: 2.7px;
   }
@@ -200,12 +200,12 @@ const SubTitle = styled.div`
   display: flex;
   padding: 76px 0px 0px 166.5px;
 
-  @media (min-width: 400px) and (max-width: 850px) {
+  @media (min-width: 500px) and (max-width: 850px) {
     width: 100%;
     padding: 40px 0px 0px 38.5px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     text-align: center;
     justify-content: center;
     padding: 112px 0 32px 0;
