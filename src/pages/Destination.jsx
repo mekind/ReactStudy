@@ -15,15 +15,47 @@ import MenuItems from "../components/MenuItems";
 import SubTitle from "/src/components/SubTitle";
 import DestText from "../components/DestText";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
-// import Kakao from '../kakao';
 
-const KakaoScript = () => (
-  <script
-  type="text/javascript"
-  src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0cdcb1926e7104866a36cc3b90d81242&libraries=services,clusterer"
-  />
-);
 
+const Place = styled.p`
+  color: black;
+  border: 0;
+  background: none;
+`
+
+const KakoMaps = () => {
+  return (
+    <Map
+      center={{ lat: 37.55662746570122, lng: 127.04452310036136 }}
+      style={{ width: "100%", height: "360px" }}
+      >
+        <MapMarker position={{ lat: 37.55533804516442, lng: 127.04708570584059 }}>
+          <Place >그냥주점</Place>
+        </MapMarker>
+        <MapMarker position={{ lat: 37.55528392203195, lng: 127.04724411412965  }}>
+          <Place >냥냥주점</Place>
+        </MapMarker>
+        <MapMarker position={{ lat: 37.55527034356811, lng: 127.04740254787127  }}>
+          <Place >그냥주점</Place>
+        </MapMarker>
+        <MapMarker position={{ lat: 37.555148546944004 , lng: 127.04780423450728  }}>
+          <Place >그냥주점</Place>
+        </MapMarker>
+        {/* <CustomOverlayMap position={{ lat: 37.55533804516442, lng: 127.04708570584059 }}>
+          <Place >그냥주점</Place>
+        </CustomOverlayMap>
+        <CustomOverlayMap position={{ lat: 37.55528392203195, lng: 127.04724411412965  }}>
+          <Place >냥냥주점</Place>
+        </CustomOverlayMap>
+        <CustomOverlayMap position={{ lat: 37.55527034356811, lng: 127.04740254787127  }}>
+          <Place >그냥주점</Place>
+        </CustomOverlayMap>
+        <CustomOverlayMap position={{ lat: 37.555148546944004 , lng: 127.04780423450728  }}>
+          <Place >그냥주점</Place>
+        </CustomOverlayMap> */}
+    </Map>
+  )
+}
 
 
 
@@ -37,10 +69,10 @@ const Destination = () => {
   const title = 'PICK YOUR DESTINATION';
   const planetList = ['MOON', 'MARS', 'EUROPA', 'TITAN']
 
+
   return (
     <Container>
-      <KakaoScript/>
-      {/* <Left>
+      <Left>
         <SubTitle number='01' title={title}/>
         <LeftWrapper>
           <PlanetImg planeturl={planetInfo[planet].imgUrl}/>
@@ -65,15 +97,8 @@ const Destination = () => {
             days={planetInfo[planet].days}
           /> 
         </RightWrapper>
-      </Right> */}
-      <Map
-      center={{ lat: 33.5563, lng: 126.79581 }}
-      style={{ width: "100%", height: "360px" }}
-      >
-        <MapMarker position={{ lat: 33.55635, lng: 126.795841 }}>
-          <div style={{color:"#000"}}>Hello World!</div>
-        </MapMarker>
-      </Map>
+      </Right>
+      {/* <KakoMaps/> */}
     </Container>    
   )
 }
